@@ -1,0 +1,109 @@
+<template>
+    <div class="cv-container">
+        <div class="cv-header">
+            <p class="cv-text-title">{rdata.fullName}</p>
+            <p class="cv-text-subtitle">{rdata.role}</p>
+            <div class="cv-header-section">
+                <div class="cv-social-media">
+                    <template for:each={rdata.socialMedia} for:item="socialMediaItem">
+                        <resume-cv-social-media-item key={socialMediaItem.icon}>
+                            <resume-cv-icon slot="icon" icon={socialMediaItem.icon}></resume-cv-icon>
+                            <a slot="content" href={socialMediaItem.content}>{socialMediaItem.content}</a>
+                        </resume-cv-social-media-item>
+                    </template>
+                </div>
+                <div class="cv-personal-info">
+                    <template for:each={rdata.personalInfo} for:item="personalInfoItem" for:index="index">
+                        <p key={personalInfoItem}>{personalInfoItem}</p>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <div class="cv-body">
+            <div class="cv-intro">
+                <p class="cv-text-intro">
+                    <resume-cv-composed-text text={rdata.introText}></resume-cv-composed-text>
+                </p>
+            </div>
+            <div class="cv-body-section">
+                <p class="cv-body-section-title">{labels.Experience}</p>
+                <div>
+                    <template for:each={rdata.experience} for:item="experienceItem" for:index="index">
+                        <resume-cv-experience-item key={experienceItem.period} 
+                        role={experienceItem.role}
+                        company={experienceItem.company}
+                        period={experienceItem.period}>
+                            <resume-cv-composed-text text={experienceItem.description}></resume-cv-composed-text>
+                        </resume-cv-experience-item>
+                    </template>
+                </div>
+            </div>
+            <div class="cv-body-section">
+                <p class="cv-body-section-title">{labels.Certifications}</p>
+                <div class="cv-certifications-container">
+                    <template for:each={rdata.certifications} for:item="certItem">
+                        <resume-cv-certification-item key={certItem.subject}
+                        title={certItem.subject}
+                        date={certItem.date}
+                        credential={certItem.detail}
+                        >
+                            <resume-cv-icon icon={certItem.icon}></resume-cv-icon>
+                        </resume-cv-certification-item>
+                    </template>
+                </div>
+            </div>
+            <div class="cv-body-section">
+                <p class="cv-body-section-title">{labels.Skills}</p>
+                <div class="cv-skills-container break-inside">
+                    <template for:each={rdata.skills} for:item="skillItem" for:index="index">
+                        <resume-cv-skill-display key={skillItem.category} category={skillItem.category} type={skillItem.type} items={skillItem.items}></resume-cv-skill-display>
+                    </template>
+                </div>
+            </div>
+            <div class="cv-body-section">
+                <p class="cv-body-section-title">{labels.Projects}</p>
+                <div class="cv-projects-container">
+                    <template for:each={rdata.projects} for:item="projectItem">
+                        <p key={projectItem.category} class="text-color-soft-highlight text-large">{projectItem.category}</p>
+                        <ul key={projectItem.category}>
+                            <template for:each={projectItem.items} for:item="item">
+                                <li key={item.name}>
+                                    <div>
+                                        <div>{item.name}</div>
+                                        <div>({item.period})</div>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                </div>
+            </div>
+            <div class="cv-body-section">
+                <p class="cv-body-section-title">{labels.Languages}</p>
+                <div class="cv-langs-container">
+                    <ul>
+                        <template for:each={rdata.languages} for:item="langItem">
+                            <li key={langItem.name}><b>{langItem.name}:</b> {langItem.level}</li>
+                        </template>
+                    </ul>
+                </div>
+            </div>
+            <div class="cv-body-section">
+                <p class="cv-body-section-title">{labels.Education}</p>
+                <div>
+                    <ul>
+                        <template for:each={rdata.education} for:item="educationItem" for:index="index">
+                            <li key={educationItem.period}>
+                                <resume-cv-education-item subject={educationItem.subject}
+                                period={educationItem.period}
+                                institution={educationItem.institution}
+                                status={educationItem.detail}
+                                ></resume-cv-education-item>
+                            </li> 
+                        </template>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

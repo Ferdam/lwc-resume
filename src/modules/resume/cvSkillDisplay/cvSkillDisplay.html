@@ -1,0 +1,10 @@
+<template>
+    <div class="pagebreak-inside-avoid pagebreak-before-avoid pagebreak-after-auto">
+        <p class="text-color-soft-highlight text-large">{category}</p>
+        <div class="cv-skill-list pagebreak-inside-auto">
+            <template for:each={items} for:item="skill">
+                <span key={skill} class={itemTypeClass}>{skill}</span>
+            </template>
+        </div>
+    </div>
+</template>

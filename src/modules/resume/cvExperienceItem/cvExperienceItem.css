@@ -1,0 +1,56 @@
+.experience-item-container {
+    background-color: #f2f2f2;
+    display: grid;
+    align-self: center;
+    grid-template-columns: 99%;
+    margin-bottom: 6px;
+    padding: 6px 4px 8px 8px;
+    padding-right: 4px;
+    padding-left: 8px;
+    border-left: 6px solid #002060;
+}
+
+.experience-item-container > .header {
+    display: grid;
+    grid-template-columns: auto auto;
+    border-bottom: 1px dashed #aaa;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+}
+
+.header > div {
+    display: flex;
+    gap: 8px;
+}
+
+p {
+    margin: 0 0;
+}
+
+.role,
+.company {
+    text-align: left;
+}
+.period {
+    color: #777;
+    text-align: right;
+    font-size: smaller;
+}
+.role {
+    font-weight: 700;
+}
+.company {
+    font-weight: 600;
+    width: fit-content;
+    padding: 2px 8px;
+    border-radius: 5px;
+    border: 1px solid #002060;
+    background-color: #002060;
+    color: #fff;
+    font-size: x-small;
+}
+
+.description {
+    margin-left: 0.25cm;
+    text-align: justify;
+}

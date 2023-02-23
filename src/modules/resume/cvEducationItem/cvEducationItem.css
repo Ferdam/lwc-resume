@@ -1,0 +1,23 @@
+.education-item-container {
+    display: grid;
+    grid-template-columns: 40% 10%;
+    margin-bottom: 8px;
+}
+
+p {
+    margin: 0 0;
+}
+
+.subject {
+    font-weight: 700;
+}
+.subject,
+.institution {
+    text-align: left;
+}
+.period,
+.status {
+    color: #777;
+    text-align: right;
+    font-size: smaller;
+}

@@ -1,0 +1,24 @@
+{
+    "lwc": {
+        "modules": [
+            {
+                "dir": "src/modules"
+            },
+            {
+                "name": "@resume/data",
+                "path": "src/modules/resume/data/data.js"
+            },
+            {
+                "name": "@resume/metadata/labels",
+                "path": "src/modules/resume/metadata/labels.js"
+            }
+        ]
+    },
+    "routes": [
+        {
+            "id": "resume",
+            "path": "/",
+            "rootComponent": "resume/app"
+        }
+    ]
+}

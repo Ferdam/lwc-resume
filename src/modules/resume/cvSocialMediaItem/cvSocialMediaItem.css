@@ -1,0 +1,16 @@
+span {
+    margin-right: 4px;
+}
+
+.icon {
+    /* aspect-ratio: 1; */
+    height: 24px;
+    width: 24px;
+    display: grid;
+    align-items: center;
+}
+
+.social-item-container {
+    display: flex;
+    align-items: center;
+}

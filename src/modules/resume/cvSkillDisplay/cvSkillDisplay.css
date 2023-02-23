@@ -1,0 +1,48 @@
+@media print {
+   .pagebreak-inside-avoid { page-break-inside: avoid; }
+   .pagebreak-inside-auto { page-break-inside: auto; }
+   .pagebreak-before-avoid { page-break-before: avoid; }
+   .pagebreak-after-always { page-break-after: always; }
+   .pagebreak-after-auto { page-break-after: auto; }
+}
+
+p {
+    margin: 0;
+}
+
+.text-large {
+    font-size: larger;
+}
+
+.text-color-soft-highlight {
+    color: #4F81BD;
+    margin-bottom: 2px;
+    margin-top: 4px;
+}
+
+.text-body-ident {
+    /* margin-left: 16px; */
+    font-size: smaller;
+}
+
+.cv-skills-container {
+    text-align: justify; 
+}
+
+.cv-skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-left: 16px;
+}
+
+.skill-badge {
+    font-weight: 400;
+    width: fit-content;
+    padding: 2px 12px;
+    border-radius: 5px;
+    /* border: 1px solid #222; */
+    background-color: #eee;
+    color: #222;
+    font-size: smaller;
+}
